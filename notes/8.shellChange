@@ -1,0 +1,56 @@
+如果表达式中包含特殊字符，Shell 将会进行替换。例如，在双引号中使用变量就是一种替换，转义字符也是一种替换。
+demo:
+
+#!/bin/bash
+
+a=10
+echo -e "Value of a is $a \n"
+
+运行结果： Value of a is 10
+这里 -e 表示对转义字符进行替换。如果不使用 -e 选项，将会原样输出： 
+Value of a is 10\n
+
+下面的转义字符都可以用在 echo 中：
+转义字符 	含义
+\\ 		反斜杠
+\a 		警报，响铃
+\b 		退格（删除键）
+\f 		换页(FF)，将当前位置移到下页开头
+\n 		换行
+\r 		回车
+\t 		水平制表符（tab键） 
+\v 		垂直制表符
+可以使用 echo 命令的 -E 选项禁止转义，默认也是不转义的；使用 -n 选项可以禁止插入换行符。 
+
+命令替换:
+	命令替换是指Shell可以先执行命令，将输出结果暂时保存，在适当的地方输出。
+	命令替换的语法： `command` 
+	注意是反引号，不是单引号，这个键位于 Esc 键下方。
+	下面的例子中，将命令执行结果保存在变量中： 
+	#!/bin/bash
+	DATE=`date`
+	echo "Date is $DATE"
+	USERS=`who | wc -l`
+	echo "Logged in user are $USERS"
+	UP=`date ; uptime`
+	echo "Uptime is $UP"
+	运行结果： 
+	Date is Thu Jul  2 03:59:57 MST 2009
+	Logged in user are 1
+	Uptime is Thu Jul  2 03:59:57 MST 2009
+	03:59:57 up 20 days, 14:03,  1 user,  load avg: 0.13, 0.07, 0.15
+
+wc:
+	wc -c filename：显示一个文件的字节数
+
+	wc -m filename：显示一个文件的字符数
+
+	wc -l filename：显示一个文件的行数
+
+	wc -L filename：显示一个文件中的最长行的长度
+
+	wc -w filename：显示一个文件的字数
+
+	who:显示关于谁正在使用本地系统节点的信息 
+	上线时间（Uptime）是指某时间段内计算机或通信系统正常工作的总时长。
+

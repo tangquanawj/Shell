@@ -1,0 +1,9 @@
+1.Shell本身是一个用C语言编写的程序，它是用户使用Unix/Linux的桥梁，用户的大部分工作都是通过Shell完成的。<its main source is c>
+
+2.可以说，shell使用的熟练程度反映了用户对Unix/Linux使用的熟练程度。
+
+3.Shell有两种执行命令的方式：
+
+    交互式（Interactive）：解释执行用户的命令，用户输入一条命令，Shell就解释执行一条。
+    批处理（Batch）：用户事先写一个Shell脚本(Script)，其中有很多条命令，让Shell一次把这些命令执行完，而不必一条一条地敲命令。
+
