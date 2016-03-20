@@ -1,0 +1,4 @@
+syntax error near unexpected token `then'
+
+reason:
+问题在于空格，这个很难发现，if和“[”之间要有空格，“==”两边也要有空格。
